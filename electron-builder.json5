@@ -5,19 +5,14 @@
   "appId": "YourAppID",
   "asar": true,
   "directories": {
+    // "buildResources": "resources",
     "output": "release/${version}"
   },
   "files": [
     "dist-electron",
     "dist"
+    // "resources/**/*"
   ],
-  "mac": {
-    "artifactName": "${productName}_${version}.${ext}",
-    "target": [
-      "dmg",
-      "zip"
-    ]
-  },
   "win": {
     "target": [
       {
@@ -30,7 +25,8 @@
     "artifactName": "${productName}_${version}.${ext}"
   },
   "linux": {
-    "target": [ "AppImage" ]
+    "target": [ "AppImage" ],
+    "icon": "ressources/icons/icon.png"
   },
   "nsis": {
     "oneClick": false,
@@ -42,5 +38,11 @@
     "provider": "generic",
     "channel": "latest",
     "url": "https://github.com/electron-vite/electron-vite-react/releases/download/v0.9.9/"
-  }
+  },
+  // "directories": {
+  //   "buildResources": "resources",
+  //   "output": "release"
+  // },
+  // "files": ["resources/**/*"]
+        
 }

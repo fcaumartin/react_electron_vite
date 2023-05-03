@@ -1,12 +1,17 @@
 {
   "name": "test_vite",
+  "description": "Application de consultation du planning",
+  "author": {
+    "name": "frc",
+    "email": "fcaumartin@gmail.com"
+  },
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "dist-electron/main/index.js",
 
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && electron-builder",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

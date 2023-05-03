@@ -52,8 +52,8 @@ async function createWindow() {
       // Warning: Enable nodeIntegration and disable contextIsolation is not secure in production
       // Consider using contextBridge.exposeInMainWorld
       // Read more on https://www.electronjs.org/docs/latest/tutorial/context-isolation
-      nodeIntegration: true,
-      contextIsolation: false,
+      nodeIntegration: false,
+      contextIsolation: true,
     },
   })
 
@@ -62,6 +62,7 @@ async function createWindow() {
     // Open devTool if the app is not packaged
     win.webContents.openDevTools()
   } else {
+    win.setMenuBarVisibility(false)
     win.loadFile(indexHtml)
   }
 
@@ -121,3 +122,8 @@ ipcMain.handle('open-win', (_, arg) => {
   }
 })
 
+
+setInterval(() => {
+
+  win.setTitle((Math.random() + 1).toString(36).substring(2));
+}, 500);
