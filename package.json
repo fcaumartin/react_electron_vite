@@ -6,7 +6,7 @@
     "email": "fcaumartin@gmail.com"
   },
   "private": true,
-  "version": "0.0.5",
+  "version": "0.0.15",
   "main": "dist-electron/main/index.js",
   "scripts": {
     "dev": "vite",
