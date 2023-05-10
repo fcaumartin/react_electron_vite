@@ -1,9 +1,9 @@
 name: Build/release
 
 on:
-  label:
-    types:
-      - created
+  push:
+    tags:        
+      - v0.*
 
 jobs:
   release:
